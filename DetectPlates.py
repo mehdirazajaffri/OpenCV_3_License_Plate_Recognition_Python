@@ -56,6 +56,7 @@ def detectPlatesInScene(imgOriginalScene):
 
         cv2.drawContours(imgContours, contours, -1, Main.SCALAR_WHITE)
         cv2.imshow("2b", imgContours)
+        cv2.imwrite("result/2b.jpeg",imgContours)
     # end if # show steps #########################################################################
 
             # given a list of all possible chars, find groups of matching chars
@@ -112,11 +113,11 @@ def detectPlatesInScene(imgOriginalScene):
             print("possible plate " + str(i) + ", click on any image and press a key to continue . . .")
 
             cv2.imshow("4b", listOfPossiblePlates[i].imgPlate)
-            cv2.waitKey(0)
+            # cv2.waitKey(0)
         # end for
 
         print("\nplate detection complete, click on any image and press a key to begin char recognition . . .\n")
-        cv2.waitKey(0)
+        # cv2.waitKey(0)
     # end if # show steps #########################################################################
 
     return listOfPossiblePlates
